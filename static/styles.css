@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0.87);
+}
+#Box1 {
+    width: 80%;
+    max-width: 600px;
+    height: 400px;
+    border: 1px solid #ccc;
+    margin: 20px;
+    margin-top: 70px;
+    margin-left: 70px;
+    padding: 10px;
+    background-color:rgba(0, 0, 0, 0.159);
+    border-radius: 9px;
+    border-width: 5px;
+    float: left;
+}
+#Box2 {
+    width: 80%;
+    max-width: 600px;
+    height: 400px;
+    border: 1px solid #ccc;
+    margin: 20px;
+    margin-top: -490px;
+    margin-right: 70px;
+    padding: 10px;
+    background-color:rgba(0, 0, 0, 0.159);
+    border-radius: 9px;
+    border-width: 5px;
+    float: right;
+}
+.bot{
+    margin: 10px;
+    padding: 10px;
+    background-color:  #bbb;
+    float: left;
+    border: none;
+    border-radius: 9px;
+}
+.user input{
+    margin-top: 520px;
+    margin-left: -648px;
+    width: 35%;
+    padding: 10px;
+    border-radius: 9px;
+    background-color: transparent;
+    border-color: antiquewhite;
+    color: antiquewhite;
+}
+.user button{
+    width: 5%;
+    padding: 7px;
+    background-color: transparent;
+    border-color: antiquewhite;
+    border-radius: 9px;
+}
+.user button:hover{
+    background-color:antiquewhite ;
+}
+#A{
+  margin-left:850px;
+  margin-top: -30px;
+}
+#B{
+  margin-left:890px;
+  margin-top: -21px;
+}
+#C{
+  margin-left:930px;
+  margin-top: -21px;
+}
+#D{
+  margin-left:970px;
+  margin-top: -21px;
+}

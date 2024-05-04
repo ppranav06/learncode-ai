@@ -1,3 +1,3 @@
 # learncode-ai
 
-AI tool assistant aimed towards mindfully using code (learning platform suited for students) 
+Elixir is an AI based assistant aimed towards mindful usage of code. This is aimed at students as a learning platform.  

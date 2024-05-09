@@ -7,23 +7,30 @@
     <title>Elixir AI: Enabling Mindful coding</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='{{url_for("static", filename="css/styles.css")}}'>
-    <script src='main.js'></script>
+    <!--
+        <script src='main.js'></script>
+    -->
 
 </head>
 
 <body>
-    <div id="Box1">
+    <div id="Chatbox">
         <div class="bot">
             Welcome, How can I help you?
         </div>
     </div>
     <div class="user">
         <label>
-            <input placeholder="Enter your Query" type="text"></input>
-            <button type="submit"><img src="{{ url_for('static', filename='images/return_arrow.webp') }}" alt="arrow" height="20px" width="20px"></button>
+            <div class="form">
+                <form action="/" method="POST">
+                    <input placeholder="Enter your Query" type="text"></input>
+                    <button type="submit"><img src="{{ url_for('static', filename='images/return_arrow.webp') }}" alt="arrow" height="20px" width="20px"></button>
+                </form>
+            </div>
+            
         </label>
     </div>
-    <div id="Box2">
+    <div id="Quizbox">
     </div>
     <div class="options">
         <div id="A">

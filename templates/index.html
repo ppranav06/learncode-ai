@@ -22,11 +22,11 @@
                 </div>
             </div>
             <div class="Inputs">
-                <div class="user">
-                    <label>
+                <div class="user"> <!--User enters data in form - to POST-->
+                    <form action="/" method="POST">
                         <input placeholder="Enter your Query" type="text"></input>
-                    </label>
-                    <button type="submit"><img src="return_arrow.webp" alt="arrow" height="20px" width="20px"></button>
+                        <button type="submit"><img src="{{ url_for('static', filename='images/return_arrow.webp') }}" alt="arrow" height="20px" width="20px"></button>
+                    </form>
                 </div>
 
             </div>

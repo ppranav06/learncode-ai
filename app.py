@@ -2,7 +2,7 @@
 
 from flask import \
 	Flask, render_template, url_for, request, jsonify, redirect
-
+import os
 # from IPython.display import display
 from IPython.display import Markdown
 import textwrap
@@ -18,7 +18,7 @@ def to_markdown(text):
 # API_KEY = os.environ.get("API_KEY") 
 import google.generativeai as genai
 
-API_KEY = 'AIzaSyA6AlsJ17coor1z5L9P5bOntRtHrFh7wMI'
+API_KEY = os.environ.get('API_KEY')
 genai.configure(api_key=API_KEY)
 
 app = Flask(__name__)

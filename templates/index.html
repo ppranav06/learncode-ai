@@ -20,14 +20,14 @@
                 </div>
             </div>
             <div class="Inputs">
-                <div class="user"> <!--User enters data in form - to POST-->
-                    <form action="/" method="POST">
+                <form action="/" method="POST">
+                    <div class="user"> <!--User enters data in form - to POST-->
                         <input placeholder="Enter your Query" type="text"></input>
-                        <button type="submit"><img src="{{ url_for('static', filename='images/return_arrow.webp') }}" alt="arrow" height="20px" width="20px"></button>
+                        <button type="submit"><img src="{{ url_for('static', filename='images/return_arrow.webp') }}"
+                                alt="arrow" height="20px" width="20px"></button>
                         <input type="hidden" id="backendUrl" value="http://localhost:5000/generate-text">
-                    </form>
-                </div>
-
+                    </div>
+                </form>
             </div>
         </div>
         <div class="questionbox">

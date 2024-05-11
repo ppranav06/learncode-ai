@@ -29,7 +29,7 @@ def index():
 	if request.method == 'POST':
 		# Get the user query from the request
 		user_query = request.form.get('query')
-		return render_template('index.html', generated_response=gemini_model_response(user_query))		
+		return render_template('index.html', display_query=user_query, generated_response=gemini_model_response(user_query))		
 
 	return render_template('index.html')
 

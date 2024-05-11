@@ -43,7 +43,7 @@ body {
   align-self: center;
 }
 
-.user textarea {
+.user input {
   width: 35vw;
   height: 5vh;
   background-color: transparent;

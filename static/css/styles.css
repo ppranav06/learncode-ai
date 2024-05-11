@@ -15,7 +15,7 @@ body {
   height: 70vh;
   background-color: rgba(0, 0, 0, 0.159);
   border: 5px solid #ccc;
-  border-radius: 9px;
+  border-radius: 1.2vh;
 }
 
 #Box2 {
@@ -26,7 +26,7 @@ body {
   margin-left: 5%;
   background-color: rgba(0, 0, 0, 0.159);
   border: 5px solid #ccc;
-  border-radius: 9px;
+  border-radius: 1.2vh;
 }
 
 .bot {
@@ -35,7 +35,7 @@ body {
   background-color: #bbb;
   float: left;
   border: none;
-  border-radius: 9px;
+  border-radius: 1.2vh;
 }
 
 .user {
@@ -43,13 +43,14 @@ body {
   align-self: center;
 }
 
-.user input {
+.user textarea {
   width: 35vw;
   height: 5vh;
   background-color: transparent;
   border-color: antiquewhite;
   color: antiquewhite;
-  border-radius: 9px;
+  border-radius: 1.2vh;
+  resize: none;
 }
 
 .user button {
@@ -58,7 +59,7 @@ body {
   margin-left: 2%;
   background-color: transparent;
   border-color: antiquewhite;
-  border-radius: 9px;
+  border-radius: 1.2vh;
 }
 
 /* .options{
@@ -95,7 +96,7 @@ body {
 #D button {
   width: 5vw;
   height: 5vh;
-  border-radius: 9px;
+  border-radius: 1.2vh;
   background-color: transparent;
   border-color: antiquewhite;
   color: antiquewhite;

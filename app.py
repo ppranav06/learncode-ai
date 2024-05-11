@@ -1,6 +1,8 @@
 # basic flask app
 
-from flask import Flask, render_template, url_for, request, jsonify, redirect
+from flask import \
+Flask, render_template, url_for, request, jsonify, redirect
+
 import os
 
 # Getting Gemini API key from environment
@@ -42,7 +44,7 @@ def generate_text():
 	# Handle response status code (basic implementation)
 	if response.status_code == 200:
 		# Parse the response (assuming successful response)
-		generated_text = response.json()['generations'][0]['text']
+		generated_text = response.json()['generations'][0]['text']; print(generated_text)
 		return jsonify({'generated_text': generated_text})
 	else:
 		return jsonify({'error': 'API request failed'}), response.status_code

@@ -7,7 +7,7 @@
     <title>Elixir AI: Enabling Mindful coding</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='{{url_for("static", filename="css/styles.css")}}'>
-    <script src='{{ url_for("static", filename="js/main.js") }}'></script>
+    <!--<script src='{{ url_for("static", filename="js/main.js") }}'></script>-->
 
 </head>
 
@@ -20,9 +20,9 @@
                 </div>
             </div>
             <div class="Inputs">
-                <form action="/" method="POST">
+                <form name='query' action="/" method="POST">
                     <div class="user"> <!--User enters data in form - to POST-->
-                        <textarea placeholder="Enter your Query" rows="5" cols="40"></textarea>
+                        <input name='query' type='text' placeholder="Enter your Query" rows="5" cols="40"></input>
                         <button type="submit"><img src="{{ url_for('static', filename='images/return_arrow.webp') }}"
                                 alt="arrow" height="20px" width="20px"></button>
                         <input type="hidden" id="backendUrl" value="http://localhost:5000/generate-text">
@@ -31,7 +31,8 @@
             </div>
         </div>
         <div class="questionbox">
-            <div id="Box2">
+            <div id="Box2" class="bot">
+                {{ generated_response }}
             </div>
             <div class="options">
                 <div id="A">

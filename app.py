@@ -1,53 +1,47 @@
 # basic flask app
 
 from flask import \
-Flask, render_template, url_for, request, jsonify, redirect
+	Flask, render_template, url_for, request, jsonify, redirect
 
-import os
+# from IPython.display import display
+from IPython.display import Markdown
+import textwrap
+
+def to_markdown(text):
+	"""Convert normal text to markdown format"""
+	text = text.replace('•', '  *')
+	md_content = Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
+	return md_content.__str__()
+
 
 # Getting Gemini API key from environment
-API_KEY = os.environ.get("API_KEY") 
+# API_KEY = os.environ.get("API_KEY") 
+import google.generativeai as genai
+
+API_KEY = 'AIzaSyA6AlsJ17coor1z5L9P5bOntRtHrFh7wMI'
+genai.configure(api_key=API_KEY)
 
 app = Flask(__name__)
 
 @app.route('/', methods=['POST', 'GET'])
 
 def index():
-    if request.method == 'POST':
-        # return "Page under construction"
-        return redirect('/generate-text')
-    
-    return render_template('index.html')
+	if request.method == 'POST':
+		# Get the user query from the request
+		user_query = request.form.get('query')
+		return render_template('index.html', generated_response=gemini_model_response(user_query))		
 
-@app.route('/generate-text', methods = ['POST'])
-def generate_text():
-	# Get the user query from the request
-	user_query = request.json.get('query')
+	return render_template('index.html')
 
-	# Check if query is present
+def gemini_model_response(user_query):
+	"""Generate response via the Gemini genai module"""
+	
 	if not user_query:
-		return jsonify({'error': 'Missing query parameter'}), 400
+		return "Please give query / error with parsing query"
 
-	# Prepare the API request data
-	request_data = {
-			'contents': [{'parts': [{'text': user_query}]}]
-	}
-
-	# Import libraries only when needed (improves startup speed)
-	import requests
-
-	# Send the API request using requests library
-	response = requests.post(
-			"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" + API_KEY,
-			json=request_data)
-
-	# Handle response status code (basic implementation)
-	if response.status_code == 200:
-		# Parse the response (assuming successful response)
-		generated_text = response.json()['generations'][0]['text']; print(generated_text)
-		return jsonify({'generated_text': generated_text})
-	else:
-		return jsonify({'error': 'API request failed'}), response.status_code
+	model = genai.GenerativeModel('gemini-pro')
+	response = model.generate_content(user_query)
+	return response.text
 
 if __name__=='__main__':
-    app.run(debug=True)
+	app.run(debug=True)

@@ -8,11 +8,6 @@ body {
   justify-content: center;
 }
 
-.Inputs {
-  display: flex;
-  align-items: center;
-}
-
 #Box1 {
   margin-top: 14%;
   margin-bottom: 5%;

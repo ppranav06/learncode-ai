@@ -13,9 +13,7 @@ def to_markdown(text):
 	md_content = Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
 	return md_content.__str__()
 
-
 # Getting Gemini API key from environment
-# API_KEY = os.environ.get("API_KEY") 
 import google.generativeai as genai
 
 API_KEY = os.environ.get('API_KEY')
